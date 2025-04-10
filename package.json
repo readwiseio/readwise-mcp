@@ -1,0 +1,32 @@
+{
+  "name": "@readwise/readwise-mcp",
+  "version": "0.0.1",
+  "description": "Readwise MCP",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "readwise-mcp": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "dev": "tsc --watch",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js",
+    "lint": "eslint ."
+  },
+  "author": "Readwise",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.9.0",
+    "axios": "^1.8.4",
+    "axios-retry": "^4.5.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "@modelcontextprotocol/inspector": "^0.8.2",
+    "eslint": "^9.24.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.29.1"
+  }
+}
