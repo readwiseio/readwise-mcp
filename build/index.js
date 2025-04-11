@@ -44,8 +44,14 @@ class ReadwiseMcp {
             .catch((reason) => console.error(`Failed to call the MCP initialization endpoint`, reason));
     }
     registerTools() {
-        this.server.tool("search_readwise_highlights", { query: z.string() }, async ({ query }) => {
-            const response = await this.axios.post("/api/mcp/highlights", { query });
+        this.server.tool("search_readwise_highlights", {
+            vector_search_term: z.string(),
+            full_text_queries: z.array(z.object({
+                field_name: z.enum(["document_author", "document_title", "highlight_note", "highlight_plaintext", "highlight_tags"]),
+                search_term: z.string(),
+            })),
+        }, async (payload) => {
+            const response = await this.axios.post("/api/mcp/highlights", payload);
             return { content: [{ type: "text", text: JSON.stringify(response.data.results) }] };
         });
     }
