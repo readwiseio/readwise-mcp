@@ -1,15 +1,14 @@
+#!/usr/bin/env node
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import axios from "axios";
 import axiosRetry from 'axios-retry';
 import { z } from "zod";
 class ReadwiseMcp {
-    server;
-    axios;
     constructor() {
         this.server = new McpServer({
             name: "Readwise MCP",
-            version: "0.0.1"
+            version: "0.0.2"
         });
         this.axios = axios.create({
             baseURL: process.env.BASE_URL ?? "https://readwise.io",

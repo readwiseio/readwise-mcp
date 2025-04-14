@@ -1,6 +1,6 @@
 {
   "name": "@readwise/readwise-mcp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Readwise MCP",
   "homepage": "https://readwise.io",
   "private": false,
@@ -9,7 +9,7 @@
     "readwise-mcp": "./build/index.js"
   },
   "scripts": {
-    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "build": "tsc --build && node -e \"const path = 'build/index.js'; require('fs').chmodSync(path, '755'); const shebang = '#!/usr/bin/env node\\n'; let content = fs.readFileSync(path, 'utf8'); if (!content.startsWith(shebang)) { content = shebang + content; fs.writeFileSync(path, content); }\"",
     "dev": "tsc --watch",
     "inspector": "npx @modelcontextprotocol/inspector build/index.js",
     "lint": "eslint ."
