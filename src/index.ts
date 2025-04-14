@@ -59,10 +59,18 @@ class ReadwiseMcp {
       "search_readwise_highlights",
       {
         vector_search_term: z.string(),
-        full_text_queries: z.array(z.object({
-          field_name: z.enum(["document_author", "document_title", "highlight_note", "highlight_plaintext", "highlight_tags"]),
-          search_term: z.string(),
-        })),
+        full_text_queries: z.array(
+          z.object({
+            field_name: z.enum([
+              "document_author",
+              "document_title",
+              "highlight_note",
+              "highlight_plaintext",
+              "highlight_tags",
+            ]),
+            search_term: z.string(),
+          })
+        ),
       },
       async (payload) => {
         const response = await this.axios.post("/api/mcp/highlights", payload);
