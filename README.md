@@ -21,7 +21,7 @@ This project is a local [MCP server](https://spec.modelcontextprotocol.io) desig
       "command": "npx",
       "args": [
         "-y",
-        "@readwiseio/readwise-mcp"
+        "@readwise/readwise-mcp"
       ],
       "env": {
         "ACCESS_TOKEN": "XXXXXXXXX"
