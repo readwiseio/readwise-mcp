@@ -1,9 +1,9 @@
 {
-  "name": "@readwiseio/readwise-mcp",
+  "name": "@readwise/readwise-mcp",
   "version": "0.0.1",
   "description": "Readwise MCP",
   "homepage": "https://readwise.io",
-  "private": true,
+  "private": false,
   "type": "module",
   "bin": {
     "readwise-mcp": "./build/index.js"
