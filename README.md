@@ -10,6 +10,7 @@ This project is a local [MCP server](https://spec.modelcontextprotocol.io) desig
 
 ## Installation in Claude
 
+0. Please make sure you have [Node](https://nodejs.org/en/download) installed.
 1. Open Claude desktop app.
 2. Navigate to Settings > Developer.
 3. Click `Edit Config`.
@@ -31,27 +32,6 @@ This project is a local [MCP server](https://spec.modelcontextprotocol.io) desig
 }
 ```
 
-## Development
+### Known Issues
 
-### Getting started
-1. Install Git hooks: `uvx pre-commit install`.
-2. Run `npm run dev`.
-3. Use the following Claude config:
-```
-{
-  "mcpServers": {
-    "Readwise MCP": {
-      "command": "node",
-      "args": [
-        "/path/to/your/readwise-mcp/build/index.js"
-      ],
-      "env": {
-        "BASE_URL": "https://local.readwise.io:8000",
-        "NODE_TLS_REJECT_UNAUTHORIZED": "0",
-        "ACCESS_TOKEN": "XXXXXXXXX"
-      }
-    }
-  }
-}
-```
-4. Remember to restart Claude after each modification to the code.
+When using this MCP server, you may occasionally encounter MCP errors during your conversations with Claude. If you experience such errors, we recommend trying to switch between different Claude models (e.g., from Claude 3.5 Haiku to Claude 3.7 Sonnet) as this often resolves the issue.

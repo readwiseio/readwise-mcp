@@ -8,7 +8,7 @@ class ReadwiseMcp {
     constructor() {
         this.server = new McpServer({
             name: "Readwise MCP",
-            version: "0.0.3"
+            version: "0.0.4"
         });
         this.axios = axios.create({
             baseURL: process.env.BASE_URL ?? "https://readwise.io",
