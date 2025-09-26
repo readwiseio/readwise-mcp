@@ -1,8 +1,8 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import axios, { AxiosInstance } from "axios";
+import {McpServer} from "@modelcontextprotocol/sdk/server/mcp.js";
+import {StdioServerTransport} from "@modelcontextprotocol/sdk/server/stdio.js";
+import axios, {AxiosInstance} from "axios";
 import axiosRetry from 'axios-retry';
-import { z } from "zod";
+import {z} from "zod";
 
 class ReadwiseMcp {
   private server: McpServer;
@@ -30,7 +30,7 @@ class ReadwiseMcp {
         retryDelay: () => 5000,
         retryCondition: (error) => {
           const responseStatus = error.response?.status;
-          return !responseStatus || responseStatus >= 400
+          return !responseStatus || responseStatus >= 400;
         }
       },
     );
@@ -69,12 +69,12 @@ class ReadwiseMcp {
               "highlight_tags",
             ]),
             search_term: z.string(),
-          })
-        ),
+          }),
+        ).max(8),
       },
       async (payload) => {
         const response = await this.axios.post("/api/mcp/highlights", payload);
-        return { content: [{ type: "text", text: JSON.stringify(response.data.results) }] };
+        return {content: [{type: "text", text: JSON.stringify(response.data.results)}]};
       }
     );
   }

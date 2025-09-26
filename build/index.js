@@ -54,7 +54,7 @@ class ReadwiseMcp {
                     "highlight_tags",
                 ]),
                 search_term: z.string(),
-            })),
+            })).max(8),
         }, async (payload) => {
             const response = await this.axios.post("/api/mcp/highlights", payload);
             return { content: [{ type: "text", text: JSON.stringify(response.data.results) }] };
