@@ -11,7 +11,7 @@ class ReadwiseMcp {
   constructor() {
     this.server = new McpServer({
       name: "Readwise MCP",
-      version: "0.0.6"
+      version: "0.0.7"
     });
 
     this.axios = axios.create({
