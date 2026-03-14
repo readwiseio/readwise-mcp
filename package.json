@@ -1,7 +1,7 @@
 {
   "name": "@readwise/readwise-mcp",
-  "version": "0.0.7",
-  "description": "Readwise MCP",
+  "version": "0.0.8",
+  "description": "DEPRECATED — Use the new Readwise MCP server at readwise.io/mcp instead.",
   "homepage": "https://readwise.io",
   "private": false,
   "type": "module",
