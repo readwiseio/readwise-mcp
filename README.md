@@ -2,7 +2,7 @@
 
 > **This MCP server is deprecated.** Please use the new Readwise MCP server instead: **[readwise.io/mcp](https://readwise.io/mcp)**
 >
-> The new server is hosted — no local installation needed. It supports Claude Desktop, ChatGPT, Claude Code, Cursor, and any MCP-compatible app.
+> The new server is hosted — no local installation needed. It supports both Readwise and Reader data, and works with Claude Desktop, ChatGPT, Claude Code, Cursor, and any MCP-compatible app.
 
 ---
 
